@@ -1,0 +1,39 @@
+[
+  {
+    "id": "1760044729787",
+    "title": "Love... Service... Purity",
+    "subtitle": "",
+    "description": "Annai Means Mother. We Provide Motherly care towards all our children studying here. We enrich your childs thinking capability and we find the unique talent they have, promote it and nurture your childs growth. We teach moral, obedience and great characteristics along with quality education for their better placement in life",
+    "imageUrl": "/uploads/carousel/carousel-1760044729775.jpg",
+    "ctaText": "",
+    "ctaHref": "",
+    "order": 1,
+    "isActive": true,
+    "createdAt": "2025-10-09T21:18:49.787Z",
+    "updatedAt": "2025-10-09T21:20:32.515Z"
+  },
+  {
+    "id": "1760044923438",
+    "title": "Location & Facilities",
+    "subtitle": "",
+    "description": "Our School is located at heart of Tirupur City. Well builted classrooms. Wonderful Labs for students. Big Playground for our young kids to develop their talents. Highly qualified teachers for their knowledge enhancement. Lot of events & Picnic conducted for their happiness",
+    "imageUrl": "/uploads/carousel/carousel-1760044923429.jpg",
+    "ctaText": null,
+    "ctaHref": null,
+    "order": 2,
+    "isActive": true,
+    "createdAt": "2025-10-09T21:22:03.438Z"
+  },
+  {
+    "id": "1760533130114",
+    "title": "Prize distribution",
+    "subtitle": "",
+    "description": "prize distribution",
+    "imageUrl": "/uploads/carousel/carousel-1760533130108.jpg",
+    "ctaText": null,
+    "ctaHref": null,
+    "order": 3,
+    "isActive": true,
+    "createdAt": "2025-10-15T12:58:50.114Z"
+  }
+]

@@ -1,0 +1,74 @@
+{
+  "title": "About Our School",
+  "subtitle": "Nurturing minds with motherly care since establishment",
+  "mainContent": "At Annai Matriculation School, we believe our school is \"THE FOUNDATION OF YOUR CHILD'S FUTURE\". Our motto is \"LOVE - SERVICE - PURITY\".\n\nThe school is being run by professionally qualified and well-experienced promoters having more than twenty years of experience in the field of Child Education, School Education, and training who are committed to leaving a mark in the educational field in twin cities.\n\nInitially, we started the School as Primary School. With our continuous effort and dedication towards education, which was well acknowledged by the parents, today we are running Classes until 10th Standard.\n\nIn 10th Standard, we have got 100% Results for the past 6 years. Also, we have got Centum in Social Science for the Academic year 2012. It is the sincere effort from the Management and staff together that we make this a success.",
+  "vision": "To provide quality education with motherly care, nurturing every child to reach their full potential and become responsible citizens of tomorrow.",
+  "mission": "To create a learning environment that fosters academic excellence, character development, and holistic growth through innovative teaching methods and personalized attention.",
+  "facilities": [
+    {
+      "title": "Computer Lab",
+      "description": "Modern computer lab equipped with latest technology to help students develop digital literacy and coding skills.",
+      "image": "/images/about/computer-lab.jpg",
+      "visible": true
+    },
+    {
+      "title": "Library",
+      "description": "Well-stocked library with a wide collection of books, magazines, and digital resources to foster a love for reading.",
+      "image": "/images/about/library.jpg",
+      "visible": true
+    },
+    {
+      "title": "Chemistry Lab",
+      "description": "Fully equipped science laboratory where students conduct experiments and explore scientific concepts hands-on.",
+      "image": "/images/about/chemistry-lab.jpg",
+      "visible": true
+    },
+    {
+      "title": "Play Area",
+      "description": "Safe and spacious playground for physical activities, sports, and recreation to ensure overall development.",
+      "image": "/images/about/play-area.jpg",
+      "visible": true
+    }
+  ],
+  "timeline": [
+    {
+      "year": "2000",
+      "title": "Milestone",
+      "description": "Annai Matriculation School was established with a vision to provide quality education with motherly care.",
+      "visible": true
+    },
+    {
+      "year": "2005",
+      "title": "Expansion to Primary",
+      "description": "Expanded from Pre-KG to Primary classes, welcoming more students into our loving environment.",
+      "visible": true
+    },
+    {
+      "year": "2010",
+      "title": "Secondary Education",
+      "description": "Extended our services to include secondary education up to 10th Standard.",
+      "visible": true
+    },
+    {
+      "year": "2012",
+      "title": "First Centum Achievement",
+      "description": "Achieved Centum in Social Science, marking our commitment to academic excellence.",
+      "visible": true
+    },
+    {
+      "year": "2018",
+      "title": "100% Success Rate",
+      "description": "Achieved 100% pass rate in 10th Standard board exams, a record maintained for 6 consecutive years.",
+      "visible": true
+    },
+    {
+      "year": "2025",
+      "title": "Today",
+      "description": "Continuing our legacy with 1200+ students and 25+ years of educational excellence.",
+      "visible": true
+    }
+  ],
+  "showVision": true,
+  "showMission": true,
+  "showTimeline": true
+}

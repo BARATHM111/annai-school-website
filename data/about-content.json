@@ -1,0 +1,35 @@
+{
+  "title": "About Our School",
+  "subtitle": "Nurturing minds with motherly care since establishment",
+  "mainContent": "At Annai Matriculation School, we believe our school is \"THE FOUNDATION OF YOUR CHILD'S FUTURE\". Our motto is \"LOVE - SERVICE - PURITY\".\n\nThe school is being run by professionally qualified and well-experienced promoters having more than twenty years of experience in the field of Child Education, School Education, and training who are committed to leaving a mark in the educational field in twin cities.\n\nInitially, we started the School as Primary School. With our continuous effort and dedication towards education, which was well acknowledged by the parents, today we are running Classes until 10th Standard.\n\nIn 10th Standard, we have got 100% Results for the past 6 years. Also, we have got Centum in Social Science for the Academic year 2012. It is the sincere effort from the Management and staff together that we make this a success.",
+  "vision": "To provide quality education with moral values and create responsible citizens for tomorrow.",
+  "mission": "To nurture young minds with care, dedication, and excellence in education while maintaining our core values of Love, Service, and Purity.",
+  "showVision": true,
+  "showMission": true,
+  "facilities": [
+    {
+      "title": "Smart Classrooms",
+      "description": "Modern technology-enabled classrooms for interactive learning",
+      "image": "/images/facilities/classroom.jpg",
+      "visible": true
+    },
+    {
+      "title": "Science Laboratory",
+      "description": "Well-equipped laboratory for hands-on science experiments",
+      "image": "/images/facilities/lab.jpg",
+      "visible": true
+    },
+    {
+      "title": "Library",
+      "description": "Extensive collection of books and digital resources",
+      "image": "/images/facilities/library.jpg",
+      "visible": true
+    },
+    {
+      "title": "Sports Facilities",
+      "description": "Playground and sports equipment for physical development",
+      "image": "/images/facilities/sports.jpg",
+      "visible": true
+    }
+  ]
+}

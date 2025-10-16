@@ -1,0 +1,96 @@
+{
+  "barathm111@gmail.com": {
+    "email": "barathm111@gmail.com",
+    "application_id": "app_1760046811496_5ej8nmses",
+    "status": "approved",
+    "submitted_at": "2025-10-09T21:53:31.498Z",
+    "last_updated": "2025-10-10T03:29:45.281Z",
+    "personal_info": {
+      "studentName": "Barath",
+      "dateOfBirth": "2001-11-01",
+      "gender": "male",
+      "bloodGroup": "B+"
+    },
+    "contact_info": {
+      "parentPhone": "9894511515",
+      "parentEmail": "barathm111@gmail.com",
+      "address": "boston usa",
+      "city": "boston",
+      "state": "usa",
+      "pincode": "635102"
+    },
+    "parent_info": {
+      "fatherName": "madesh",
+      "motherName": "rathika"
+    },
+    "academic_info": {
+      "classApplying": "9",
+      "previousSchool": "shemford school",
+      "previousMarks": "",
+      "previousPercentage": "",
+      "marksheet": "/uploads/documents/1760046809684_toy_models_research_paper.pdf"
+    },
+    "additional_info": {
+      "medicalConditions": "",
+      "specialRequirements": ""
+    },
+    "documents": {},
+    "status_history": [
+      {
+        "status": "submitted",
+        "date": "2025-10-09T21:53:31.497Z",
+        "comment": "Application submitted successfully"
+      }
+    ],
+    "notes": "",
+    "updated_at": "2025-10-10T03:29:45.281Z"
+  },
+  "barathbarath2372@email.com": {
+    "email": "barathbarath2372@email.com",
+    "application_id": "app_1760065822270_unpiqaqya",
+    "status": "rejected",
+    "submitted_at": "2025-10-10T03:10:22.271Z",
+    "last_updated": "2025-10-10T03:34:17.746Z",
+    "personal_info": {
+      "studentName": "Barath",
+      "dateOfBirth": "2001-11-01",
+      "gender": "male",
+      "bloodGroup": "B+"
+    },
+    "contact_info": {
+      "address": "boston usa ",
+      "city": "sindu",
+      "state": "tamilnadhu",
+      "pincode": "456123"
+    },
+    "parent_info": {
+      "fatherName": "madesh",
+      "fatherPhone": "9791306084",
+      "fatherEmail": "",
+      "motherName": "rathika",
+      "motherPhone": "9894511522",
+      "motherEmail": ""
+    },
+    "academic_info": {
+      "classApplying": "8",
+      "previousSchool": "shemford school",
+      "previousMarks": "",
+      "previousPercentage": "",
+      "marksheet": "/uploads/documents/1760065821439_Neel_Nanda_transcript.pdf"
+    },
+    "additional_info": {
+      "medicalConditions": "",
+      "specialRequirements": ""
+    },
+    "documents": {},
+    "status_history": [
+      {
+        "status": "submitted",
+        "date": "2025-10-10T03:10:22.270Z",
+        "comment": "Application submitted successfully"
+      }
+    ],
+    "notes": "",
+    "updated_at": "2025-10-10T03:34:17.746Z"
+  }
+}

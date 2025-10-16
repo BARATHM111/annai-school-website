@@ -1,0 +1,343 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+:root {
+  --radius: 0.625rem;
+  /* Professional School Color Palette */
+  --background: oklch(0.99 0.005 85);
+  /* Warm off-white */
+  --foreground: oklch(0.15 0.02 240);
+  /* Deep navy text */
+  --card: oklch(1 0 0);
+  /* Pure white cards */
+  --card-foreground: oklch(0.15 0.02 240);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.15 0.02 240);
+  --primary: oklch(0.25 0.08 240);
+  /* Deep navy blue - professional & trustworthy */
+  --primary-foreground: oklch(0.98 0.005 85);
+  --secondary: oklch(0.45 0.06 210);
+  /* Sophisticated slate blue */
+  --secondary-foreground: oklch(0.98 0.005 85);
+  --muted: oklch(0.95 0.01 240);
+  /* Light blue-gray */
+  --muted-foreground: oklch(0.45 0.02 240);
+  --accent: oklch(0.65 0.15 45);
+  /* Warm gold - achievement & excellence */
+  --accent-foreground: oklch(0.15 0.02 240);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(0.88 0.01 240);
+  /* Subtle blue-gray border */
+  --input: oklch(0.96 0.01 240);
+  --ring: oklch(0.45 0.06 210);
+  /* Professional chart colors */
+  --chart-1: oklch(0.25 0.08 240);
+  /* Deep navy */
+  --chart-2: oklch(0.65 0.15 45);
+  /* Warm gold */
+  --chart-3: oklch(0.35 0.12 150);
+  /* Forest green */
+  --chart-4: oklch(0.45 0.06 210);
+  /* Slate blue */
+  --chart-5: oklch(0.55 0.08 30);
+  /* Warm brown */
+  --sidebar: oklch(0.97 0.01 240);
+  --sidebar-foreground: oklch(0.15 0.02 240);
+  --sidebar-primary: oklch(0.25 0.08 240);
+  --sidebar-primary-foreground: oklch(0.98 0.005 85);
+  --sidebar-accent: oklch(0.95 0.01 240);
+  --sidebar-accent-foreground: oklch(0.15 0.02 240);
+  --sidebar-border: oklch(0.88 0.01 240);
+  --sidebar-ring: oklch(0.45 0.06 210);
+}
+
+.dark {
+  /* Professional Dark Mode for School Website */
+  --background: oklch(0.12 0.02 240);
+  /* Deep navy background */
+  --foreground: oklch(0.95 0.005 85);
+  /* Warm off-white text */
+  --card: oklch(0.18 0.02 240);
+  /* Slightly lighter navy for cards */
+  --card-foreground: oklch(0.95 0.005 85);
+  --popover: oklch(0.18 0.02 240);
+  --popover-foreground: oklch(0.95 0.005 85);
+  --primary: oklch(0.75 0.12 45);
+  /* Bright gold for primary actions */
+  --primary-foreground: oklch(0.12 0.02 240);
+  --secondary: oklch(0.35 0.04 210);
+  /* Muted slate blue */
+  --secondary-foreground: oklch(0.95 0.005 85);
+  --muted: oklch(0.22 0.02 240);
+  /* Dark blue-gray */
+  --muted-foreground: oklch(0.65 0.02 240);
+  --accent: oklch(0.75 0.12 45);
+  /* Warm gold accent */
+  --accent-foreground: oklch(0.12 0.02 240);
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: oklch(0.3 0.02 240);
+  /* Subtle navy border */
+  --input: oklch(0.25 0.02 240);
+  --ring: oklch(0.75 0.12 45);
+  /* Professional dark chart colors */
+  --chart-1: oklch(0.75 0.12 45);
+  /* Bright gold */
+  --chart-2: oklch(0.55 0.15 150);
+  /* Forest green */
+  --chart-3: oklch(0.65 0.08 210);
+  /* Light slate blue */
+  --chart-4: oklch(0.45 0.12 30);
+  /* Warm brown */
+  --chart-5: oklch(0.35 0.08 300);
+  /* Deep purple */
+  --sidebar: oklch(0.15 0.02 240);
+  --sidebar-foreground: oklch(0.95 0.005 85);
+  --sidebar-primary: oklch(0.75 0.12 45);
+  --sidebar-primary-foreground: oklch(0.12 0.02 240);
+  --sidebar-accent: oklch(0.22 0.02 240);
+  --sidebar-accent-foreground: oklch(0.95 0.005 85);
+  --sidebar-border: oklch(0.3 0.02 240);
+  --sidebar-ring: oklch(0.75 0.12 45);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Professional animations for smooth UI */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.6s ease-out;
+}
+
+.animate-slide-up {
+  animation: slide-up 0.8s ease-out;
+}
+
+.animate-scale-in {
+  animation: scale-in 0.5s ease-out;
+}
+
+/* Enhanced shadow utilities */
+.shadow-3xl {
+  box-shadow: 0 35px 60px -12px rgba(0, 0, 0, 0.25);
+}
+
+/* Animated School Keyframes */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes float-delayed {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+@keyframes sway {
+  0%, 100% {
+    transform: rotate(-2deg);
+  }
+  50% {
+    transform: rotate(2deg);
+  }
+}
+
+@keyframes sway-delayed {
+  0%, 100% {
+    transform: rotate(2deg);
+  }
+  50% {
+    transform: rotate(-2deg);
+  }
+}
+
+@keyframes wave {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(10deg);
+  }
+}
+
+@keyframes bird {
+  0% {
+    transform: translateX(0) translateY(0);
+  }
+  100% {
+    transform: translateX(300px) translateY(-50px);
+  }
+}
+
+@keyframes clock-minute {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes clock-hour {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(30deg);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-float-delayed {
+  animation: float-delayed 8s ease-in-out infinite;
+}
+
+.animate-sway {
+  animation: sway 4s ease-in-out infinite;
+}
+
+.animate-sway-delayed {
+  animation: sway-delayed 5s ease-in-out infinite;
+}
+
+.animate-wave {
+  animation: wave 2s ease-in-out infinite;
+}
+
+.animate-bird {
+  animation: bird 15s linear infinite;
+}
+
+.animate-clock-minute {
+  animation: clock-minute 60s linear infinite;
+}
+
+.animate-clock-hour {
+  animation: clock-hour 720s linear infinite;
+}
+
+/* Smooth Scrollbar Styling for Admin Sidebar */
+.scroll-smooth {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar for webkit browsers (Chrome, Safari, Edge) */
+.scrollbar-thin::-webkit-scrollbar {
+  width: 6px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-track {
+  background: rgb(31, 41, 55); /* gray-800 */
+  border-radius: 10px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background: rgb(55, 65, 81); /* gray-700 */
+  border-radius: 10px;
+  transition: background 0.2s ease;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb:hover {
+  background: rgb(75, 85, 99); /* gray-600 */
+}
+
+/* For Firefox */
+.scrollbar-thin {
+  scrollbar-width: thin;
+  scrollbar-color: rgb(55, 65, 81) rgb(31, 41, 55);
+}
