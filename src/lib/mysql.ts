@@ -105,13 +105,20 @@ const dbConfig = process.env.DATABASE_URL
     database: process.env.MYSQLDATABASE || process.env.DB_NAME || 'annai_school'
   }
 
-// Add connection pool settings
+// Add connection pool settings optimized for serverless (Vercel)
 const poolConfig = {
   ...dbConfig,
   waitForConnections: true,
-  connectionLimit: 10,
+  connectionLimit: 2, // Reduced for serverless
+  maxIdle: 2, // Maximum idle connections
+  idleTimeout: 10000, // Close idle connections after 10s
   queueLimit: 0,
-  charset: 'utf8mb4'
+  enableKeepAlive: true,
+  keepAliveInitialDelay: 0,
+  charset: 'utf8mb4',
+  connectTimeout: 10000, // 10 second connection timeout
+  acquireTimeout: 10000, // 10 second acquire timeout
+  timeout: 60000 // 60 second query timeout
 }
 
 // Create connection pool
