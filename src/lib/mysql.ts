@@ -105,24 +105,21 @@ const dbConfig = process.env.DATABASE_URL
     database: process.env.MYSQLDATABASE || process.env.DB_NAME || 'annai_school'
   }
 
-// Add connection pool settings optimized for serverless (Vercel)
-const poolConfig = {
+// Detect if running in serverless environment (Vercel)
+const isServerless = process.env.VERCEL === '1' || process.env.AWS_LAMBDA_FUNCTION_NAME
+
+// For serverless: don't use pooling, create fresh connections
+// For traditional servers: use connection pooling
+const poolConfig = isServerless ? null : {
   ...dbConfig,
   waitForConnections: true,
-  connectionLimit: 2, // Reduced for serverless
-  maxIdle: 2, // Maximum idle connections
-  idleTimeout: 10000, // Close idle connections after 10s
+  connectionLimit: 10,
   queueLimit: 0,
-  enableKeepAlive: true,
-  keepAliveInitialDelay: 0,
-  charset: 'utf8mb4',
-  connectTimeout: 10000, // 10 second connection timeout
-  acquireTimeout: 10000, // 10 second acquire timeout
-  timeout: 60000 // 60 second query timeout
+  charset: 'utf8mb4'
 }
 
-// Create connection pool
-const pool = mysql ? mysql.createPool(poolConfig) : null
+// Create connection pool only for non-serverless environments
+const pool = mysql && !isServerless ? mysql.createPool(poolConfig) : null
 
 // Database connection utility
 export class Database {
@@ -142,6 +139,35 @@ export class Database {
 
   // Execute query with parameters
   async query(sql: string, params: any[] = []): Promise<any> {
+    if (!mysql) {
+      console.warn('Database not connected - returning empty result')
+      return []
+    }
+
+    // In serverless, create fresh connection for each query
+    if (isServerless) {
+      return new Promise((resolve, reject) => {
+        const connection = require('mysql').createConnection(dbConfig)
+        connection.connect((err: any) => {
+          if (err) {
+            console.error('Connection error:', err)
+            return reject(err)
+          }
+          
+          connection.query(sql, params, (error: any, results: any) => {
+            connection.end()
+            if (error) {
+              console.error('Query error:', error)
+              reject(error)
+            } else {
+              resolve(results)
+            }
+          })
+        })
+      })
+    }
+
+    // Use pool for traditional servers
     if (!this.pool) {
       console.warn('Database not connected - returning empty result')
       return []
@@ -163,13 +189,37 @@ export class Database {
 
   // Execute insert and return inserted ID
   async insert(sql: string, params: any[] = []): Promise<string> {
+    if (!mysql) {
+      console.warn('Database not connected - returning mock ID')
+      return Date.now().toString()
+    }
+
+    // In serverless, create fresh connection
+    if (isServerless) {
+      return new Promise((resolve, reject) => {
+        const connection = require('mysql').createConnection(dbConfig)
+        connection.connect((err: any) => {
+          if (err) return reject(err)
+          
+          connection.query(sql, params, (error: any, result: any) => {
+            connection.end()
+            if (error) {
+              reject(error)
+            } else {
+              const insertId = result.insertId || Date.now().toString()
+              resolve(insertId.toString())
+            }
+          })
+        })
+      })
+    }
+
     if (!this.pool) {
       console.warn('Database not connected - returning mock ID')
       return Date.now().toString()
     }
     try {
       const [result] = await this.pool.execute(sql, params) as any
-      // Handle both classic mysql and mysql2 result formats
       const insertId = result.insertId || result.insertId?.toString() || Date.now().toString()
       return insertId.toString()
     } catch (error) {
@@ -180,6 +230,30 @@ export class Database {
 
   // Execute update/delete and return affected rows
   async execute(sql: string, params: any[] = []): Promise<number> {
+    if (!mysql) {
+      console.warn('Database not connected - returning 0 affected rows')
+      return 0
+    }
+
+    // In serverless, create fresh connection
+    if (isServerless) {
+      return new Promise((resolve, reject) => {
+        const connection = require('mysql').createConnection(dbConfig)
+        connection.connect((err: any) => {
+          if (err) return reject(err)
+          
+          connection.query(sql, params, (error: any, result: any) => {
+            connection.end()
+            if (error) {
+              reject(error)
+            } else {
+              resolve(result.affectedRows || 0)
+            }
+          })
+        })
+      })
+    }
+
     if (!this.pool) {
       console.warn('Database not connected - returning 0 affected rows')
       return 0
