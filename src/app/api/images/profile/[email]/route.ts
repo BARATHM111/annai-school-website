@@ -1,7 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { PrismaClient } from '@prisma/client'
-
-const prisma = new PrismaClient()
+import { db } from '@/lib/mysql'
 
 export async function GET(
   request: NextRequest,
@@ -11,21 +9,21 @@ export async function GET(
     const email = decodeURIComponent(params.email)
     
     // Get profile photo from database
-    const profile = await prisma.studentProfile.findUnique({
-      where: { email },
-      select: {
-        profilePhoto: true,
-        profilePhotoType: true,
-        profilePhotoName: true
-      }
-    })
+    const [rows]: any = await db.execute(
+      'SELECT profilePhoto, profilePhotoType, profilePhotoName FROM student_profiles WHERE email = ?',
+      [email]
+    )
+    
+    const profile = rows[0]
     
     if (!profile || !profile.profilePhoto) {
       return new NextResponse('Image not found', { status: 404 })
     }
     
-    // Convert Bytes to Buffer
-    const imageBuffer = Buffer.from(profile.profilePhoto)
+    // Convert to Buffer if needed
+    const imageBuffer = Buffer.isBuffer(profile.profilePhoto) 
+      ? profile.profilePhoto 
+      : Buffer.from(profile.profilePhoto)
     
     // Set appropriate headers
     const headers = new Headers()
